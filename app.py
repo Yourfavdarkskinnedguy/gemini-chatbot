@@ -3,10 +3,15 @@ from backend import generate_prompt
 import json
 import firebase_admin
 from firebase_admin import auth, credentials
+from dotenv import load_dotenv
 import os
+load_dotenv()
 
-cred_dict = json.loads(os.environ['FIREBASE_ADMIN_CREDENTIALS'])
+
+
+cred_dict = json.loads(os.environ["FIREBASE_ADMIN_CREDENTIALS"])
 cred = credentials.Certificate(cred_dict)
+firebase_admin.initialize_app(cred)
 
 app = Flask(__name__)
 app.secret_key='daniel_secret_key213'
@@ -55,7 +60,7 @@ def signup():
 @app.route('/chatbot')
 def chatbot():
     print(f'first session in chatbot is {session}')
-    print(f'session in chatbot is {session.get('logged_in')}')
+    print(f'login check in session(chatbot) is {session.get('logged_in')}')
     if session.get('logged_in') == True:
         return render_template('chatbot.html')
         
