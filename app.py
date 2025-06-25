@@ -3,9 +3,10 @@ from backend import generate_prompt
 import json
 import firebase_admin
 from firebase_admin import auth, credentials
+import os
 
-cred = credentials.Certificate("gemini-project-9a564-firebase-adminsdk-fbsvc-a83323a805.json")  
-firebase_admin.initialize_app(cred)
+cred_dict = json.loads(os.environ['FIREBASE_ADMIN_CREDENTIALS'])
+cred = credentials.Certificate(cred_dict)
 
 app = Flask(__name__)
 app.secret_key='daniel_secret_key213'
