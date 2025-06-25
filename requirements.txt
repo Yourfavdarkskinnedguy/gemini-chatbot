@@ -1,0 +1,8 @@
+python-dotenv
+google-genai
+google-generativeai 
+firebase_admin
+json
+backend
+flask
+pydantic

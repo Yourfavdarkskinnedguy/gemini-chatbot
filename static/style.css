@@ -1,0 +1,116 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, #facc15, #f97316); /* yellow to orange */
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.dark-mode {
+  background-color: #111827;
+  color: #fff;
+}
+
+/* Header */
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d97706;
+  padding: 1rem;
+}
+
+.header-actions button {
+  margin-left: 0.5rem;
+}
+
+.toggle-dark,
+.logout-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.toggle-dark {
+  background-color: #d1d5db;
+  color: black;
+}
+
+.logout-btn {
+  background-color: #dc2626;
+  color: white;
+}
+
+.logout-btn:hover {
+  background-color: #b91c1c;
+}
+
+/* Main Chat Area */
+.chat-main {
+  flex: 1;
+  background: white;
+  color: black;
+  overflow-y: auto;
+  padding: 1rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.dark-mode .chat-main {
+  background-color: #374151;
+  color: white;
+}
+
+/* Footer Input Area */
+.chat-footer {
+  background-color: #d97706;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.prompt-options {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+#user-input {
+  flex: 3;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #4b5563;
+  color: white;
+}
+
+#user-input::placeholder {
+  color: #ccc;
+}
+
+.chat-footer button {
+  flex: 1;
+  background-color: #16a34a;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.chat-footer button:hover {
+  background-color: #15803d;
+}
+
+/* Messages */
+.chat-messages p {
+  margin-bottom: 0.5rem;
+}
