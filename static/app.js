@@ -1,6 +1,3 @@
-import dotenv from 'dotenv';
-dotenv.config();
-
 // Firebase Config
 const firebaseConfig = {
   apiKey: "AIzaSyAt0sqKlQKhGZ_IDyrHHBKVdkRRhSoXAZs",
