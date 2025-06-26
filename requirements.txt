@@ -2,7 +2,7 @@ python-dotenv
 google-genai
 google-generativeai 
 firebase_admin
-json
+gunicorn
 backend
 flask
 pydantic
