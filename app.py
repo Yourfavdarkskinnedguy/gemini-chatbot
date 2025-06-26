@@ -14,7 +14,7 @@ cred = credentials.Certificate(cred_dict)
 firebase_admin.initialize_app(cred)
 
 app = Flask(__name__)
-app.secret_key='daniel_secret_key213'
+app.secret_key=os.getenv('app_secret_key')
 
 @app.route('/')
 def home():
