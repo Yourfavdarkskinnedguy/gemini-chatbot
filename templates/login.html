@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
@@ -18,20 +19,20 @@
 
 
 
-<div class="flex flex-col items-center justify-center min-h-screen p-4 bg-background dark:bg-gray-800">
+<div class="flex flex-col items-center justify-center min-h-screen p-4 bg-background sm:p-6 md:p-10 text-base sm:text-lg">
   
 
-    <div class="w-full max-w-md p-8 space-y-8 bg-card rounded-lg shadow-xl dark:bg-gray-700">
+    <div class="w-full max-w-md p-8 space-y-8 bg-card rounded-lg shadow-xl sm:p-6 md:p-10 text-base sm:text-lg">
       
-    <div class="text-center">
-    <h1 class="text-3xl font-bold text-primary text-purple-500 dark:text-purple-400 font-bold">Welcome Back</h1><p class="text-muted-foreground dark:text-gray-300">Sign in to continue.</p>
+    <div class="text-center sm:p-6 md:p-10 text-base sm:text-lg">
+    <h1 class="text-3xl font-bold text-primary text-purple-500 ">Welcome Back</h1><p class="text-muted-foreground">Sign in to continue.</p>
     </div>
 
     
     
     
     
-      <div class="space-y-2">
+      <div class="space-y-2 ">
     
     <form onsubmit="handleLoginSubmit(event)">
     
