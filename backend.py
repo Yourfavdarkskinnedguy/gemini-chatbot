@@ -1,6 +1,6 @@
 import base64
 import os
-from google.genai import types
+from google.generativeai import types
 from google.generativeai import GenerativeModel
 import google.generativeai as genai
 from dotenv import load_dotenv
@@ -34,12 +34,14 @@ model= genai.GenerativeModel(
 
 
 
+
 def generate_prompt(prompt):
+    
     try:
         input= model.generate_content([
 
-            f'query: {prompt}',
-            'output: '
+            f'example of prompt: {prompt}',
+            'output: ',
         ]   
         )
         input= json.loads(input.text)
@@ -66,7 +68,6 @@ if __name__ == "__main__":
         if prompt.lower() in ['bye','exit', 'close', 'quit']:
             print('Goodbye')
             break
-        response, suggestions= generate_prompt(prompt)
+        response= generate_prompt(prompt)
 
         print(f'BOT response is: {response}')
-        print(f'BOT suggestion is: {suggestions}')

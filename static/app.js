@@ -30,13 +30,12 @@ function login() {
     if (response.ok) {
       window.location.href = '/chatbot';
     } else {
-      document.getElementById('error-message').innerText = 'Session setup failed.';
+      document.getElementById('login-error-message').innerText = 'Session setup failed.';
     }
   })
+  .catch(error => document.getElementById('login-error-message').innerText = 'Invalid login credentials');
 }
 
-
-//sessionlogin function
 
 
 
@@ -45,10 +44,33 @@ function login() {
 function signup() {
   const email = document.getElementById('signup-email').value;
   const password = document.getElementById('signup-password').value;
+  console.log('email:', email)
+  console.log('password:', password)
   auth.createUserWithEmailAndPassword(email, password)
-    .then(() => window.location.href = '/chatbot')
-    .catch(error => document.getElementById('signup-error-message').innerText = error.message);
+  .then(async (userCredential) => {
+    const idToken = await userCredential.user.getIdToken();
+
+    // Send token to backend
+    const response = await fetch('/sessionLogin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ idToken })
+    });
+    console.log('response is:', response)
+
+    
+
+    if (response.ok) {
+      window.location.href = '/chatbot';
+    } else {
+      document.getElementById('error-message').innerText = 'Session setup failed.';
+    }
+  })
+  .catch(error => document.getElementById('signup-error-message').innerText = error.message);
 }
+
 
 // Logout Function
 function logout() {
